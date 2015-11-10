@@ -19,7 +19,7 @@ namespace DotNetNuke.Modules.Announcements {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl plHeaderTemplate;
+        protected global::System.Web.UI.UserControl plHeaderTemplate;
         
         /// <summary>
         /// txtHeaderTemplate control.
@@ -46,7 +46,7 @@ namespace DotNetNuke.Modules.Announcements {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl plTemplate;
+        protected global::System.Web.UI.UserControl plTemplate;
         
         /// <summary>
         /// txtTemplate control.
@@ -73,7 +73,7 @@ namespace DotNetNuke.Modules.Announcements {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl plAltItemTemplate;
+        protected global::System.Web.UI.UserControl plAltItemTemplate;
         
         /// <summary>
         /// txtAltItemTemplate control.
@@ -100,7 +100,7 @@ namespace DotNetNuke.Modules.Announcements {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl plSeparator;
+        protected global::System.Web.UI.UserControl plSeparator;
         
         /// <summary>
         /// txtSeparator control.
@@ -127,7 +127,7 @@ namespace DotNetNuke.Modules.Announcements {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl plFooterTemplate;
+        protected global::System.Web.UI.UserControl plFooterTemplate;
         
         /// <summary>
         /// txtFooterTemplate control.
@@ -146,6 +146,33 @@ namespace DotNetNuke.Modules.Announcements {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton cmdLoadDefFooterTemplate;
+        
+        /// <summary>
+        /// plRepeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UserControl plRepeat;
+        
+        /// <summary>
+        /// txtRepeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtRepeat;
+        
+        /// <summary>
+        /// cmdLoadDefRepeat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton cmdLoadDefRepeat;
         
         /// <summary>
         /// litTemplateHelp control.

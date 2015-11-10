@@ -72,6 +72,7 @@ namespace DotNetNuke.Modules.Announcements.Components.Settings
         public string Separator { get; set; }
         public string HeaderTemplate { get; set; }
         public string FooterTemplate { get; set; }
+        public int RepeatTemplateAfterItemCount { get; set; }
         #endregion
 
         #region constructors
@@ -99,6 +100,7 @@ namespace DotNetNuke.Modules.Announcements.Components.Settings
             Separator = TabModuleSettings.GetString(SettingName.HeaderTemplate, Null.NullString);
             HeaderTemplate = TabModuleSettings.GetString(SettingName.HeaderTemplate, Null.NullString);
             FooterTemplate = TabModuleSettings.GetString(SettingName.FooterTemplate, Null.NullString);
+            RepeatTemplateAfterItemCount = TabModuleSettings.GetInteger(SettingName.FooterTemplate, 0);
 
             Legacy = ModuleSettings.GetBoolean(SettingName.Legacy, _Legacy) || !Legacy && !string.IsNullOrEmpty(ItemTemplate);
         }

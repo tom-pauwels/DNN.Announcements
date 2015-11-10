@@ -63,6 +63,7 @@ namespace DotNetNuke.Modules.Announcements
                 cmdLoadDefAltItemTemplate.ToolTip = LocalizeString("LoadDefault.Help");
                 cmdLoadDefSeparator.ToolTip = LocalizeString("LoadDefault.Help");
                 cmdLoadDefFooterTemplate.ToolTip = LocalizeString("LoadDefault.Help");
+                cmdLoadDefRepeat.ToolTip = LocalizeString("LoadDefault.Help");
 
                 litTemplateHelp.Text = Localization.GetString("ModuleHelp.Text", LocalResourceFile);
 
