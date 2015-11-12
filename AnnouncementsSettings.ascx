@@ -27,6 +27,15 @@
                 ControlToValidate="txtDescriptionLength" CssClass="dnnFormMessage dnnFormError" resourcekey="Integer.ErrorMessage" />
         </div>
     </fieldset>
+        <fieldset>
+        <div class="dnnFormItem">
+            <dnn:Label ID="plRepeatTemplate" Suffix=":" ControlName="txtRepeatTemplate" runat="server" />
+            <asp:TextBox ID="txtRepeatTemplate" runat="server" Width="100px"></asp:TextBox>
+            <asp:CompareValidator ID="valRepeatLength" runat="server" Operator="DataTypeCheck"
+                Type="Integer" Display="Dynamic" ErrorMessage="<br />You must enter a valid integer"
+                ControlToValidate="txtRepeatTemplate" CssClass="dnnFormMessage dnnFormError" resourcekey="Integer.ErrorMessage" />
+        </div>
+    </fieldset>
     <fieldset>
         <div class="dnnFormItem">
             <dnn:Label ID="plEditorHeight" Suffix=":" ControlName="txtEditorHeight" runat="server" />

@@ -62,6 +62,7 @@ namespace DotNetNuke.Modules.Announcements.Components.Common
         public const string History = "history";
         public const string DescriptionLength = "descriptionLength";
         public const string EditorHeight = "editorHeight";
+        public const string RepeatTemplate = "repeatTemplate";
         public const string DefaultViewType = "defaultViewType";
         public const string ConnectedModule = "ConnectedModule";
         public const string Legacy = "Legacy";

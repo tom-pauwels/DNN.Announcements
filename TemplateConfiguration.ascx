@@ -37,12 +37,6 @@
                 Rows="10" MaxLength="2000" runat="server" />
             <asp:LinkButton ID="cmdLoadDefFooterTemplate" runat="server" CausesValidation="False" CssClass="dnnSecondaryAction" resourcekey="LoadDefault">Load Default</asp:LinkButton>
         </div>
-        <div class="dnnFormItem">
-            <dnn:Label ID="plRepeat" runat="server" ControlName="txtRepeatAfterCount" Suffix=":"></dnn:Label>
-            <asp:TextBox ID="txtRepeat" Width="350" runat="server" />
-            <asp:LinkButton ID="cmdLoadDefRepeat" runat="server" CausesValidation="False" CssClass="dnnSecondaryAction" resourcekey="LoadDefault">Load Default</asp:LinkButton>
-        </div>
-
     </fieldset>
     <h2 id="dnnPanel-TemplateHelp" class="dnnFormSectionHead">
         <a href="">

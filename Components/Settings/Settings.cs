@@ -47,6 +47,7 @@ namespace DotNetNuke.Modules.Announcements.Components.Settings
         private const string _TemplateType = "SimpleTemplate";
         private const string _TemplateName = "ModernAnnouncements";
         private const string _TemplateLocation = "system";
+        private const int _defaultRepeatTemplate = 0;
         #endregion
 
         #region private properties
@@ -65,6 +66,7 @@ namespace DotNetNuke.Modules.Announcements.Components.Settings
         public string TemplateType { get; set; }
         public string TemplateName { get; set; }
         public string TemplateLocation { get; set; }
+        public int RepeatTemplate { get; set; }
 
         // legacy settings
         public string ItemTemplate { get; set; }
@@ -72,7 +74,6 @@ namespace DotNetNuke.Modules.Announcements.Components.Settings
         public string Separator { get; set; }
         public string HeaderTemplate { get; set; }
         public string FooterTemplate { get; set; }
-        public int RepeatTemplateAfterItemCount { get; set; }
         #endregion
 
         #region constructors
@@ -88,7 +89,8 @@ namespace DotNetNuke.Modules.Announcements.Components.Settings
             History = TabModuleSettings.GetInteger(SettingName.History, _History);
             DescriptionLength = TabModuleSettings.GetInteger(SettingName.DescriptionLength, _DescriptionLength);
             EditorHeight = TabModuleSettings.GetInteger(SettingName.EditorHeight, _EditorHeight);
-            DefaultViewType = Utilities.StringToViewType(TabModuleSettings.GetString(SettingName.DefaultViewType,_DefaultViewType));
+            RepeatTemplate = TabModuleSettings.GetInteger(SettingName.RepeatTemplate, _defaultRepeatTemplate);
+            DefaultViewType = Utilities.StringToViewType(TabModuleSettings.GetString(SettingName.DefaultViewType, _DefaultViewType));
             TemplateType = TabModuleSettings.GetString(SettingName.TemplateType, _TemplateType);
             TemplateName = TabModuleSettings.GetString(SettingName.TemplateName, _TemplateName);
             TemplateLocation = TabModuleSettings.GetString(SettingName.TemplateLocation, _TemplateLocation);
@@ -100,7 +102,7 @@ namespace DotNetNuke.Modules.Announcements.Components.Settings
             Separator = TabModuleSettings.GetString(SettingName.HeaderTemplate, Null.NullString);
             HeaderTemplate = TabModuleSettings.GetString(SettingName.HeaderTemplate, Null.NullString);
             FooterTemplate = TabModuleSettings.GetString(SettingName.FooterTemplate, Null.NullString);
-            RepeatTemplateAfterItemCount = TabModuleSettings.GetInteger(SettingName.FooterTemplate, 0);
+            RepeatTemplate = TabModuleSettings.GetInteger(SettingName.FooterTemplate, 0);
 
             Legacy = ModuleSettings.GetBoolean(SettingName.Legacy, _Legacy) || !Legacy && !string.IsNullOrEmpty(ItemTemplate);
         }
@@ -114,6 +116,7 @@ namespace DotNetNuke.Modules.Announcements.Components.Settings
             objModules.UpdateTabModuleSetting(_tabModuleId, SettingName.History, History.ToString(CultureInfo.InvariantCulture));
             objModules.UpdateModuleSetting(_moduleId, SettingName.DescriptionLength, DescriptionLength.ToString(CultureInfo.InvariantCulture));
             objModules.UpdateTabModuleSetting(_tabModuleId, SettingName.EditorHeight, EditorHeight.ToString(CultureInfo.InvariantCulture));
+            objModules.UpdateTabModuleSetting(_tabModuleId, SettingName.RepeatTemplate, RepeatTemplate.ToString(CultureInfo.InvariantCulture));
             objModules.UpdateTabModuleSetting(_tabModuleId, SettingName.DefaultViewType, Utilities.ViewTypeToString(DefaultViewType));
             objModules.UpdateModuleSetting(_moduleId, SettingName.Legacy, Legacy.ToString(CultureInfo.InvariantCulture));
             objModules.UpdateTabModuleSetting(_tabModuleId, SettingName.TemplateType, TemplateType);

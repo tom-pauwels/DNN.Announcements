@@ -75,6 +75,7 @@ namespace DotNetNuke.Modules.Announcements
             {
                 txtHistory.Text = Model.Settings.History.ToDnnString();
                 txtDescriptionLength.Text = Model.Settings.DescriptionLength.ToDnnString();
+                txtRepeatTemplate.Text = Model.Settings.RepeatTemplate.ToDnnString();
                 txtEditorHeight.Text = Model.Settings.EditorHeight.ToDnnString();
                 foreach (Enum i in Enum.GetValues(typeof(ViewTypes)))
                 {
@@ -93,14 +94,13 @@ namespace DotNetNuke.Modules.Announcements
             base.OnSavingSettings();
             try
             {
-
                 Model.Settings.DefaultViewType = Utilities.StringToViewType(ddlViewType.SelectedValue);
                 Model.Settings.History = txtHistory.Text.ToDnnInt();
                 Model.Settings.DescriptionLength = txtDescriptionLength.Text.ToDnnInt();
+                Model.Settings.RepeatTemplate = txtRepeatTemplate.Text.ToDnnInt();
                 Model.Settings.EditorHeight = txtEditorHeight.Text.ToDnnInt();
 
                 Model.Settings.Update();
-
             }
             catch (Exception exc)
             {

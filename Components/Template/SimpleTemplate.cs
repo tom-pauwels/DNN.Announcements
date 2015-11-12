@@ -127,7 +127,6 @@ namespace DotNetNuke.Modules.Announcements.Components.Template
             FooterTemplate = GetTemplate(TemplateInfo.FooterTemplate);
             JsFile = GetTemplate(TemplateInfo.JsFile);
             CssFile = GetTemplate(TemplateInfo.CssFile);
-
         }
 
 
@@ -140,8 +139,6 @@ namespace DotNetNuke.Modules.Announcements.Components.Template
             WriteTemplate(TemplateInfo.FooterTemplate, FooterTemplate);
             WriteTemplate(TemplateInfo.JsFile, JsFile);
             WriteTemplate(TemplateInfo.CssFile, CssFile);
-            //DataCache.RemoveCache(TemplateCachKey);
-
         }
 
         public override string RenderTemplate(IEnumerable<AnnouncementInfo> announcements, bool editEnabled)
@@ -155,15 +152,17 @@ namespace DotNetNuke.Modules.Announcements.Components.Template
                 dnnTokenReplace = new TokenReplace(Scope.DefaultSettings, CultureInfo.CurrentCulture.Name, PortalSettings, PortalSettings.UserInfo);
             }
             bool altItemTemplateAvailable = !(string.IsNullOrEmpty(AltItemTemplate));
-            if (dnnTokenReplace != null)
-            {
-                output.Append(dnnTokenReplace.ReplaceEnvironmentTokens(HeaderTemplate));
-            }
+
             int counter = 0;
             var tokenReplace = new AnnouncementsTokenReplace();
             var announcementInfos = announcements as IList<AnnouncementInfo> ?? announcements.ToList();
             foreach (var announcement in announcementInfos)
             {
+                if (dnnTokenReplace != null && (counter == 0 || (counter % Settings.RepeatTemplate) == 0))
+                {
+                    output.Append(dnnTokenReplace.ReplaceEnvironmentTokens(HeaderTemplate));
+                }
+
                 //we have to pass IsEditable to the announcement, because it is used to draw the edit icon
                 announcement.IsEditable = editEnabled;
 
@@ -181,10 +180,16 @@ namespace DotNetNuke.Modules.Announcements.Components.Template
                 {
                     output.Append(dnnTokenReplace.ReplaceEnvironmentTokens(Separator));
                 }
-                counter += 1;
 
+                if (dnnTokenReplace != null && (counter != 0 && (counter % Settings.RepeatTemplate) == 0))
+                {
+                    output.Append(dnnTokenReplace.ReplaceEnvironmentTokens(FooterTemplate));
+                }
+
+                counter += 1;
             }
-            if (dnnTokenReplace != null)
+
+            if (dnnTokenReplace != null && (counter % Settings.RepeatTemplate) != 0)
             {
                 output.Append(dnnTokenReplace.ReplaceEnvironmentTokens(FooterTemplate));
             }

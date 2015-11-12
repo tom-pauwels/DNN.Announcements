@@ -85,6 +85,33 @@ namespace DotNetNuke.Modules.Announcements {
         protected global::System.Web.UI.WebControls.CompareValidator valDescriptionLength;
         
         /// <summary>
+        /// plRepeatTemplate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UserControl plRepeatTemplate;
+        
+        /// <summary>
+        /// txtRepeatTemplate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtRepeatTemplate;
+        
+        /// <summary>
+        /// valRepeatLength control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator valRepeatLength;
+        
+        /// <summary>
         /// plEditorHeight control.
         /// </summary>
         /// <remarks>
